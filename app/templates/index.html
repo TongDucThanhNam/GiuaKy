@@ -1,0 +1,17 @@
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}Trang đăng nhập{% endblock %}
+
+
+{% block content %}
+
+<div class="page-header">
+    <h1>Login</h1>
+</div>
+
+    <form method="post" action="{{ url_for('main.login') }}">
+        <button type="submit" class="btn btn-primary">Login</button>
+    </form>
+
+{% endblock %}
+
