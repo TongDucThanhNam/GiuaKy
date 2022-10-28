@@ -14,8 +14,13 @@ kích hoạn virtual env:
 Tải các thư viện liệt kê trong requirements.txt: 
 python -m pip install -r requirements.txt
 
+Import DATABASE:
+Import file user.sql vào MySQL
+
 Chạy app: 
 env FLASK_APP=flasky.py python -m flask run
+
+
 
 Để chạy trên trình duyệt: 
 http://127.0.0.1:5000
