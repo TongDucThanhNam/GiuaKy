@@ -2,11 +2,11 @@
 Đầu tiên chúng ta tạo venv environment:
 
 B1. Cài đặt virtualenv
-py -m pip install --user virtualenv
+python -m pip install --user virtualenv
 
 B2. Mở Terminal -> trỏ đến thử mục project
 Tạo folerenv: 
-py -m venv env
+python -m venv env
 
 kích hoạn virtual env: 
 .\env\Scripts\activate
