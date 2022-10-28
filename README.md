@@ -9,7 +9,7 @@ Tạo folerenv:
 python -m venv env
 
 kích hoạn virtual env: 
-.\env\Scripts\activate
+.\env\Scripts\activate (Nếu bị lỗi có thể là do sử dụng Power Shell, bạn hãy dùng Conmand Port để nhập dòng lệnh)
 
 Tải các thư viện liệt kê trong requirements.txt: 
 python -m pip install -r requirements.txt
