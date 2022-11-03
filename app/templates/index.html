@@ -136,45 +136,29 @@
               </div>
             </div>
           </div>
-          <div class="cards col-4">
-            <span>Danh sách thẻ</span>
-            <div class="card-block" style="background-color: goldenrod">
-              <div class="d-flex justify-content-between">
-                <span class="name-card">Thẻ 1</span>
-              </div>
-              <div class="d-flex flex-column">
-                <span>111111</span>
-                <div class="d-flex justify-content-between">
-                  <span>10/10/2022</span>
-                  <span>411</span>
-                </div>
-              </div>
+          <div class="cards col-4 block-transaction">
+            <h2>Giao dịch</h2>
+            
+            
+            <form
+              class=""
+              method="POST"
+              action="transaction"
+            >
+            <div class="cards transaction">
+                {{form.hidden_tag()}}
+                {{form.mssv.label(class_="label-1")}}
+                {{ form.mssv(class_="input form-control") }}
+                {{form.hoTen.label(class_="label-1")}}
+                {{ form.hoTen(class_="input form-control") }}
+                {{form.soTien.label(class_="label-1")}}
+                {{ form.soTien(class_="input form-control") }}
+                {{form.otp.label(class_="label-1")}}
+                {{ form.otp(class_="input form-control") }}
+                <button class="send-otp-btn btn">Send OPT</button>
+                {{ form.submit(class_="transaction-form-btn btn") }}
             </div>
-            <div class="card-block" style="background-color: #0066cc">
-              <div class="d-flex justify-content-between">
-                <span class="name-card">Thẻ 2</span>
-              </div>
-              <div class="d-flex flex-column">
-                <span>222222</span>
-                <div class="d-flex justify-content-between">
-                  <span>11/11/2022</span>
-                  <span>443</span>
-                </div>
-              </div>
-            </div>
-            <div class="card-block" style="background-color: grey">
-              <div class="d-flex justify-content-between">
-                <span class="name-card">Thẻ 3</span>
-              </div>
-              <div class="d-flex flex-column">
-                <span>333333</span>
-                <div class="d-flex justify-content-between">
-                  <span>12/12/2022</span>
-                  <span>577</span>
-                </div>
-              </div>
-            </div>
-          </div>
+          </form>
         </div>
       </div>
     </div>

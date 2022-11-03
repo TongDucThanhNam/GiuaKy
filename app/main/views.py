@@ -2,6 +2,8 @@ from flask import render_template, flash, redirect, url_for
 
 from app.main import main
 from app.main.forms import LoginForm
+from app.transaction.forms import TransactionForm
+
 from ..models import User
 
 
@@ -9,7 +11,8 @@ from ..models import User
 @main.route('/', methods=['GET', 'POST'])
 def index():
     print("Trang chủ")
-    return render_template('index.html')
+    form = TransactionForm()
+    return render_template('index.html', form=form)
 
 
 # Trang đăng nhập
@@ -20,7 +23,7 @@ def login():
         user = User.query.filter_by(userName=form.userName.data).first()
         if user is not None and user.verify_password(form.password.data):
             print("Login success")
-            return redirect(url_for('transaction.DongHocPhi'))
+            return redirect(url_for('main.index'))
         else:
             flash('Invalid username or password.')
     return render_template('login.html', form=form)

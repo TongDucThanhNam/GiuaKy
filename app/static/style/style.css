@@ -249,5 +249,38 @@
     border-bottom: 1px solid lightgray;
   }
 
+  .transaction .form-control{
+    margin-bottom: 20px;
+  }
+  .transaction .form-control:nth-child(9){
+    margin-bottom: 0px !important;
+  }
   
   
+  .block-transaction h2{
+    text-align: center;
+  }
+
+  .label-1{
+    font-size: 16px;
+    font-weight: 400 !important;
+  }
+
+  .transaction-form-btn{
+    background-color: #9053c7 !important;
+    color: #fff;
+    font-size: 17px !important;
+    font-weight: 700 !important;
+    width: 100%;
+  }
+  .block-transaction{
+    padding: 15px 0 !important;
+  }
+  .send-otp-btn{
+    height: 34px;
+    font-size: 16px;
+    background-color: #a89eeb !important;
+    right: 130px;
+    margin: 10px 0;
+    color: #fff !important;
+  }
