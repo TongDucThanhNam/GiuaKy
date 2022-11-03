@@ -5,6 +5,7 @@ from app.main.forms import LoginForm
 from app.transaction.forms import TransactionForm
 
 from ..models import User
+from flask_login import login_user
 
 
 # Trang chủ
@@ -23,6 +24,7 @@ def login():
         user = User.query.filter_by(userName=form.userName.data).first()
         if user is not None and user.verify_password(form.password.data):
             print("Login success")
+            login_user(user=user)
             return redirect(url_for('main.index'))
         else:
             flash('Invalid username or password.')

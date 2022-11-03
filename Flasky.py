@@ -8,7 +8,7 @@ print("app.config['SQLALCHEMY_DATABASE_URI'] = " + app.config['SQLALCHEMY_DATABA
 
 @app.before_first_request
 def create_tables():
-    # Nếu database không có gì thì tạo bản
+    # Nếu database không có gì thì tạo bảng
     print("Run create_tables")
     db.create_all()
 

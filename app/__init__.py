@@ -1,5 +1,6 @@
 from flask import Flask
 from flask_bootstrap import Bootstrap
+from flask_login import LoginManager
 from flask_moment import Moment
 from flask_sqlalchemy import SQLAlchemy
 
@@ -8,6 +9,7 @@ from config import config
 bootstrap = Bootstrap()
 db = SQLAlchemy()
 moment = Moment()
+login = LoginManager()
 
 
 def create_app(config_name):
@@ -18,6 +20,7 @@ def create_app(config_name):
     bootstrap.init_app(app)
     moment.init_app(app)
     db.init_app(app)
+    login.init_app(app)
 
     print("created app")
 
@@ -28,3 +31,5 @@ def create_app(config_name):
     app.register_blueprint(transaction_blueprint, url_prefix='/transaction')
 
     return app
+
+

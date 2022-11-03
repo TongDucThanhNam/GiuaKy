@@ -1,9 +1,18 @@
-from app import db
+from flask_login import UserMixin
+from sqlalchemy import PrimaryKeyConstraint
+
+from app import db, login
 
 
-class User(db.Model):
+@login.user_loader
+def load_user(userId):
+    return User.query.get(userId)
+
+
+class User(UserMixin, db.Model):
     __tablename__ = 'users'
-    userName = db.Column(db.String(64), primary_key=True)
+    userId = db.Column(db.Integer, primary_key=True)
+    userName = db.Column(db.String(64))
     password = db.Column(db.String(64))
     phone = db.Column(db.String(64))
     email = db.Column(db.String(64))
@@ -18,11 +27,16 @@ class User(db.Model):
         self.balance = balance
         self.tradeHistoryCode = tradeHistoryCode
 
+    # flask_login
+    def get_id(self):
+        return self.userId
+
     def verify_password(self, password):
         return self.password == password
 
     def __repr__(self):
         return '<User %r>' % self.userName
+
 
 class TransactionHistory(db.Model):
     __tablename__ = 'transactionHistory'
@@ -30,6 +44,7 @@ class TransactionHistory(db.Model):
     dayTrade = db.Column(db.String(64))
     transactionAmount = db.Column(db.Integer)
     balanceAfterTransaction = db.Column(db.Integer)
+    # remove content later
     content = db.Column(db.String(64))
 
 
@@ -38,3 +53,14 @@ class SchoolFee(db.Model):
     mssv = db.Column(db.String(64), primary_key=True)
     hoTen = db.Column(db.String(64))
     soTien = db.Column(db.Integer)
+
+
+# Khi tạo bấm thanh toán, sẽ tạo ra đối tượng TransactionProcessing lưu thông tin.
+class TransactionProcessing(db.Model):
+    __tablename__ = 'transactionProcessing'
+    transactionProcessingCode = db.Column(db.Integer, primary_key=True)
+    userId = db.Column(db.Integer)
+    transactionHistoryCode = db.Column(db.String(64))
+    transactionTime = db.Column(db.String(64))
+
+

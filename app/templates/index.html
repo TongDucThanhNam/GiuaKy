@@ -47,10 +47,7 @@
               </div>
               <div class="user-info">
                 <div class="user-name">
-                  Lê Tuấn Anh
-                </div>
-                <div class="user-role text-secondary">
-                 Nhân viên
+                  {{ current_user.userName }}
                 </div>
               </div>
             </div>
@@ -66,7 +63,7 @@
                   <div class="mt-3 d-flex">
                     <span style="font-size: 14pt; margin-right: 5px">VND</span>
                     <h4 class="current-money ms-3">
-                      500.000
+                      {{ current_user.balance }}
                     </h4>
                   </div>
                 </div>
@@ -499,3 +496,4 @@
 
 {% endblock %}
 
+</div>
