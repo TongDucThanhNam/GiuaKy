@@ -25,7 +25,7 @@ def login():
         if user is not None and user.verify_password(form.password.data):
             print("Login success")
             login_user(user=user)
-            return redirect(url_for('main.index'))
+            return redirect(url_for('transaction.DongHocPhi'))
         else:
             flash('Invalid username or password.')
     return render_template('login.html', form=form)
