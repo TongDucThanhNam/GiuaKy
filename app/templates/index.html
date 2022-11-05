@@ -45,18 +45,18 @@
                             <div style="flex: 1">
                                 <div class="history d-flex flex-column h-100">
                                     <div class="history-header d-flex text-center">
-                                        <div class="col-2">Mã số</div>
-                                        <div class="col-2">Họ tên</div>
-                                        <div class="col-2">Số tiền học phí còn nợ</div>
+                                        <div class="col-4">Mã số</div>
+                                        <div class="col-4">Họ tên</div>
+                                        <div class="col-4">Số tiền học phí còn nợ</div>
 
                                     </div>
                                     <div class="h-rule-bottom"></div>
 
                                     {% for schoolfee in schoolFees %}
-                                        <div class="history-data d-flex text-center py-2">
-                                            <div class="col-2 id">{{ schoolfee.mssv }}</div>
-                                            <div class="col-2 name">{{ schoolfee.hoTen }}</div>
-                                            <div class="col-2 phone">{{ schoolfee.soTien }}</div>
+                                        <div class="history-data d-flex text-center">
+                                            <div class="col-4 id">{{ schoolfee.mssv }}</div>
+                                            <div class="col-4 name">{{ schoolfee.hoTen }}</div>
+                                            <div class="col-4 phone">{{ schoolfee.soTien }}</div>
 
                                         </div>
                                     {% endfor %}
