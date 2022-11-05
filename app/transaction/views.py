@@ -18,6 +18,8 @@ def DongHocPhi():
     print(current_user.userName)
     print(current_user.balance)
 
+    print(current_user.email)
+
     if form.validate_on_submit():
         schoolFee = SchoolFee.query.filter_by(mssv=form.mssv.data).first()
         if schoolFee is None:
@@ -37,6 +39,10 @@ def DongHocPhi():
     return render_template('transaction.html', form=form, schoolfees=schoolfees)
 
 
-@transaction.app_template_global('get_schoolfee')
+@transaction.app_template_global('guiOTP')
+def guiOTP():
+    print("Gui OTP")
+
+
 def get_schoolfee_data():
     return SchoolFee.query.all()

@@ -93,7 +93,7 @@
                                 {{ form.soTien(class_="input form-control transaction-form") }}
                                 {{ form.otp.label(class_="label-1") }}
                                 {{ form.otp(class_="input form-control") }}
-                                <button class="send-otp-btn btn">Send OPT</button>
+                                <button onclick="{{ guiOTP() }}" class="send-otp-btn btn">Send OPT</button>
                                 {{ form.submit(class_="transaction-form-btn btn") }}
                             </div>
                         </form>
