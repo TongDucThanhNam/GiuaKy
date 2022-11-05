@@ -17,7 +17,6 @@ def DongHocPhi():
     schoolfees = get_schoolfee_data()
     print(current_user.userName)
     print(current_user.balance)
-
     print(current_user.email)
 
     if form.validate_on_submit():
@@ -41,7 +40,7 @@ def DongHocPhi():
 
 @transaction.app_template_global('guiOTP')
 def guiOTP():
-    print("Gui OTP")
+    print("Hàm gửi OTP")
 
 
 def get_schoolfee_data():
