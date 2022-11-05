@@ -54,6 +54,9 @@ class SchoolFee(db.Model):
     hoTen = db.Column(db.String(64))
     soTien = db.Column(db.Integer)
 
+    def get_soTien(self):
+        return self.soTien
+
 
 # Khi tạo bấm thanh toán, sẽ tạo ra đối tượng TransactionProcessing lưu thông tin.
 class TransactionProcessing(db.Model):

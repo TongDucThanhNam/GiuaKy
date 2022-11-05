@@ -6,10 +6,20 @@
 {% block content %}
 
     <script>
-    function get_tuition() {
-        const sotien = document.getElementById("So Tien")
-        window.alert(sotien)
-    }
+        const transaction_form = document.getElementsByClassName("transaction-form");
+
+        function get_tuition() {
+            let mssv = document.getElementsByClassName("transaction-form")[0].value;
+            if (mssv.length < 8)
+                return
+
+            {% for schoolfee in schoolfees %}
+                if (mssv == {{ schoolfee.mssv }}) {
+                    transaction_form[2].value = {{ schoolfee.soTien }}
+                }
+            {% endfor %}
+
+        }
 
     </script>
 
@@ -76,11 +86,11 @@
                             <div class="cards transaction">
                                 {{ form.hidden_tag() }}
                                 {{ form.mssv.label(class_="label-1") }}
-                                {{ form.mssv(class_="input form-control", onchange="get_tuition()") }}
+                                {{ form.mssv(class_="input form-control transaction-form", onchange="get_tuition(this)") }}
                                 {{ form.hoTen.label(class_="label-1") }}
-                                {{ form.hoTen(class_="input form-control") }}
+                                {{ form.hoTen(class_="input form-control transaction-form") }}
                                 {{ form.soTien.label(class_="label-1") }}
-                                {{ form.soTien(class_="input form-control") }}
+                                {{ form.soTien(class_="input form-control transaction-form") }}
                                 {{ form.otp.label(class_="label-1") }}
                                 {{ form.otp(class_="input form-control") }}
                                 <button class="send-otp-btn btn">Send OPT</button>

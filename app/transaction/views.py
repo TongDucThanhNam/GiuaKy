@@ -13,6 +13,8 @@ from ..models import SchoolFee, TransactionProcessing
 def DongHocPhi():
     print("transaction")
     form = TransactionForm()
+
+    schoolfees = get_schoolfee_data()
     print(current_user.userName)
     print(current_user.balance)
 
@@ -32,9 +34,9 @@ def DongHocPhi():
 
         #
 
-    return render_template('transaction.html', form=form)
+    return render_template('transaction.html', form=form, schoolfees=schoolfees)
 
 
-def get_tuition(form):
-    tuition = SchoolFee.query.filter_by(mssv=form.mssv.data)
-    return tuition.soTien
+@transaction.app_template_global('get_schoolfee')
+def get_schoolfee_data():
+    return SchoolFee.query.all()

@@ -21,3 +21,4 @@ def create_tables():
     # in ra các bảng của database "user"
     for x in my_cursor:
         print(x)
+

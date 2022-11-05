@@ -304,6 +304,11 @@ input::-webkit-calendar-picker-indicator {
     font-weight: 400 !important;
 }
 
+.transaction-form {
+    font-size: 16px;
+    font-weight: 400 !important;
+}
+
 .transaction-form-btn {
     background-color: #9053c7 !important;
     color: #fff;
