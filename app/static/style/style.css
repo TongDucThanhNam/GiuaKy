@@ -1,23 +1,26 @@
 * {
     font-family: "Varela Round", sans-serif;
     box-sizing: border-box;
-  }
-  
+}
+
 .progress-spinner {
     display: none;
     justify-content: center;
     width: 100%;
     top: 15px;
     position: fixed;
-  }
-  .progress-spinner .spinner-color {
+}
+
+.progress-spinner .spinner-color {
     color: #90e428 !important;
-  }
-  .label {
+}
+
+.label {
     text-align: left;
     font-size: 16px;
-  }
-  .input-square {
+}
+
+.input-square {
     font-size: 16px;
     line-height: 1.5;
     color: #666666;
@@ -25,8 +28,9 @@
     width: 100%;
     height: 40px;
     border-radius: 5px;
-  }
-  .notification {
+}
+
+.notification {
     position: absolute;
     top: 10px;
     left: 0;
@@ -40,28 +44,32 @@
     border: 1px solid #ffeeba;
     border-radius: 10px;
     text-align: center;
-  }
-  @include base.mobile {
+}
+
+@include base.mobile {
     .notification {
-      max-width: 300px;
+        max-width: 300px;
     }
-  }
-  .hidden {
+}
+.hidden {
     visibility: hidden;
     opacity: 0;
     transition: visibility 0s 1s, opacity 1s linear;
-  }
-  .btn-back {
+}
+
+.btn-back {
     border: none;
     border-radius: 50%;
     background-color: #fff;
     height: 50px;
     width: 50px;
-  }
-  .btn-back:hover {
+}
+
+.btn-back:hover {
     background-color: lightcyan;
-  }
-  .btn-next {
+}
+
+.btn-next {
     font-size: 16px;
     width: 100%;
     height: 40px;
@@ -69,24 +77,28 @@
     background-color: #a365d9;
     outline: 2px solid #a365d9;
     color: #fff;
-  }
-  .btn-next:hover {
+}
+
+.btn-next:hover {
     background-color: #fff;
     color: #a365d9;
-  }
-  .modal-content {
+}
+
+.modal-content {
     border-radius: 15px;
-  }
-  input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
+}
+
+input::-webkit-outer-spin-button, input::-webkit-inner-spin-button {
     -webkit-appearance: none;
     margin: 0;
-  }
-  input::-webkit-calendar-picker-indicator {
-    display: none;
-  }
-  
+}
 
-  .container-home {
+input::-webkit-calendar-picker-indicator {
+    display: none;
+}
+
+
+.container-home {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -96,8 +108,9 @@
     padding: 15px;
     background: #9053c7;
     background: linear-gradient(-135deg, #c850c0, #4158d0);
-  }
-  .block-home {
+}
+
+.block-home {
     display: flex;
     width: 90%;
     height: 90vh;
@@ -108,16 +121,18 @@
     background-position: center center;
     background-repeat: no-repeat;
     background-size: cover;
-  }
-  .block-wallet-function {
+}
+
+.block-wallet-function {
     width: 10%;
     display: flex;
     position: relative;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-  }
-  .block-wallet-function .function {
+}
+
+.block-wallet-function .function {
     width: 100px;
     height: 100px;
     display: flex;
@@ -127,27 +142,32 @@
     margin: 5px 0;
     border-radius: 20px;
     cursor: pointer;
-  }
-  .block-wallet-function .function:hover {
+}
+
+.block-wallet-function .function:hover {
     background-color: rgba(255, 255, 255, 0.3);
-  }
-  .block-wallet-function .function .icon {
+}
+
+.block-wallet-function .function .icon {
     user-select: none;
     font-size: 20pt;
     color: #fff;
-  }
-  .block-wallet-function .function span {
+}
+
+.block-wallet-function .function span {
     user-select: none;
     font-size: 12pt;
     color: #fff;
-  }
-  .block-wallet-function img.logo {
+}
+
+.block-wallet-function img.logo {
     user-select: none;
     padding: 10px;
     position: absolute;
     top: 30px;
-  }
-  .block-wallet-function .logout {
+}
+
+.block-wallet-function .logout {
     user-select: none;
     cursor: pointer;
     font-size: 20pt;
@@ -156,11 +176,13 @@
     padding: 20px;
     position: absolute;
     bottom: 30px;
-  }
-  .block-wallet-function .logout:hover {
+}
+
+.block-wallet-function .logout:hover {
     background-color: rgba(255, 255, 255, 0.3);
-  }
-  .block-wallet-content {
+}
+
+.block-wallet-content {
     display: flex;
     flex-direction: column;
     width: 90%;
@@ -168,68 +190,81 @@
     background-color: #e6ffff;
     border-radius: 50px;
     padding: 25px;
-  }
-  .block-wallet-content .user-bar {
+}
+
+.block-wallet-content .user-bar {
     width: 100%;
     display: flex;
-  }
-  .block-wallet-content .user-bar .user-container {
+}
+
+.block-wallet-content .user-bar .user-container {
     display: flex;
     justify-content: space-between;
     width: 100%;
-  }
-  .block-wallet-content .user-bar .user-container .input-group {
+}
+
+.block-wallet-content .user-bar .user-container .input-group {
     margin: 0 25px 0 10px;
-  }
-  .block-wallet-content .user-bar .user-container .input-group .search-input {
+}
+
+.block-wallet-content .user-bar .user-container .input-group .search-input {
     border-radius: 50px;
     padding: 0 20px;
-  }
-  .block-wallet-content .user-bar .user-container .user-block {
+}
+
+.block-wallet-content .user-bar .user-container .user-block {
     display: flex;
     margin-right: 10px;
-  }
-  .block-wallet-content .user-bar .user-container .user-block .user-info {
+}
+
+.block-wallet-content .user-bar .user-container .user-block .user-info {
     margin-left: 15px;
     white-space: nowrap;
-  }
-  .block-wallet-content .wallet-content {
+}
+
+.block-wallet-content .wallet-content {
     display: flex;
     height: 100%;
-  }
-  .block-wallet-content .wallet-content .wallet {
+}
+
+.block-wallet-content .wallet-content .wallet {
     padding: 10px 25px;
     height: 100%;
     display: flex;
     flex-direction: column;
-  }
-  .block-wallet-content .wallet-content .wallet .money-block {
+}
+
+.block-wallet-content .wallet-content .wallet .money-block {
     width: 50%;
     background-color: #fff;
     padding: 20px 25px;
     border-radius: 20px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  }
-  .block-wallet-content .wallet-content .wallet .money-block.hover:hover {
+}
+
+.block-wallet-content .wallet-content .wallet .money-block.hover:hover {
     background-color: rgba(20, 255, 255, 0.5);
     outline: 2px solid #78ffff;
-  }
-  .block-wallet-content .wallet-content .wallet .history {
+}
+
+.block-wallet-content .wallet-content .wallet .history {
     display: flex;
     flex-direction: column;
     background-color: #fff;
     padding: 20px 25px;
     border-radius: 20px;
     box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  }
-  .block-wallet-content .wallet-content .cards {
+}
+
+.block-wallet-content .wallet-content .cards {
     font-size: 16pt;
     padding: 25px;
     color: #fff;
     border-radius: 35px;
     background-color: #001a33;
-  }
-  .block-wallet-content .wallet-content .cards .card-block {
+}
+
+.block-wallet-content .wallet-content .cards .card-block {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -239,48 +274,53 @@
     height: 28%;
     border-radius: 25px;
     margin: 15px 0;
-  }
-  .block-wallet-content .wallet-content .cards .card-block .name-card {
+}
+
+.block-wallet-content .wallet-content .cards .card-block .name-card {
     font-size: 16pt;
     font-weight: bold;
-  }
-  .h-rule-bottom {
+}
+
+.h-rule-bottom {
     margin: 10px;
     border-bottom: 1px solid lightgray;
-  }
+}
 
-  .transaction .form-control{
+.transaction .form-control {
     margin-bottom: 20px;
-  }
-  .transaction .form-control:nth-child(9){
-    margin-bottom: 0px !important;
-  }
-  
-  
-  .block-transaction h2{
-    text-align: center;
-  }
+}
 
-  .label-1{
+.transaction .form-control:nth-child(9) {
+    margin-bottom: 0px !important;
+}
+
+
+.block-transaction h2 {
+    text-align: center;
+}
+
+.label-1 {
     font-size: 16px;
     font-weight: 400 !important;
-  }
+}
 
-  .transaction-form-btn{
+.transaction-form-btn {
     background-color: #9053c7 !important;
     color: #fff;
     font-size: 17px !important;
     font-weight: 700 !important;
     width: 100%;
-  }
-  .block-transaction{
+}
+
+.block-transaction {
     padding: 15px 0 !important;
-  }
-  .send-otp-btn{
+}
+
+.send-otp-btn {
     height: 34px;
     font-size: 16px;
     background-color: #a89eeb !important;
     right: 130px;
     margin: 10px 0;
     color: #fff !important;
-  }
+}

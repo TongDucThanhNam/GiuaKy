@@ -4,7 +4,7 @@ from app.main import main
 from app.main.forms import LoginForm
 from app.transaction.forms import TransactionForm
 
-from ..models import User
+from ..models import User, SchoolFee
 from flask_login import login_user
 
 
@@ -12,8 +12,10 @@ from flask_login import login_user
 @main.route('/', methods=['GET', 'POST'])
 def index():
     print("Trang chủ")
-    form = TransactionForm()
-    return render_template('index.html', form=form)
+    schoolFees = get_all_schoolfee()
+    for schoolFee in schoolFees:
+        print(schoolFee.hoTen)
+    return render_template('index.html', schoolFees=schoolFees)
 
 
 # Trang đăng nhập
@@ -29,3 +31,7 @@ def login():
         else:
             flash('Invalid username or password.')
     return render_template('login.html', form=form)
+
+
+def get_all_schoolfee():
+    return SchoolFee.query.all()
