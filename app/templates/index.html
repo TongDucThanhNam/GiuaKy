@@ -17,14 +17,6 @@
                     <i class="icon bi bi-house"></i>
                     <span class="mt-1">Home</span>
                 </div>
-                <div class="function" id="history" href="/history">
-                    <i class="icon bi bi-clock-history"></i>
-                    <span class="mt-1">History</span>
-                </div>
-                <div class="function" id="account" href="/account">
-                    <i class="icon bi bi-person"></i>
-                    <span class="mt-1">Account</span>
-                </div>
                 <i
                         class="logout bi bi-box-arrow-right"
                         onClick="window.location='/logout'"
@@ -33,13 +25,6 @@
             <div class="block-wallet-content">
                 <div class="user-bar mb-4">
                     <div class="user-container">
-                        <div class="input-group">
-                            <input
-                                    type="text"
-                                    class="search-input form-control"
-                                    placeholder="Search"
-                            />
-                        </div>
                         <div class="user-block">
                             <div class="user-avatar">
                                 <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Avatar" width="50"/>
@@ -122,7 +107,6 @@
             </div>
         </div>
     </div>
-
 
 
 {% endblock %}

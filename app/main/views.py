@@ -5,7 +5,7 @@ from app.main.forms import LoginForm
 from app.transaction.forms import TransactionForm
 
 from ..models import User, SchoolFee
-from flask_login import login_user
+from flask_login import login_user, login_required, logout_user
 
 
 # Trang chủ
@@ -35,3 +35,10 @@ def login():
 
 def get_all_schoolfee():
     return SchoolFee.query.all()
+
+
+@main.route("/logout")
+@login_required
+def log_out():
+    logout_user()
+    return redirect(url_for('main.index'))

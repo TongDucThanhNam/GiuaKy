@@ -35,4 +35,6 @@ def DongHocPhi():
     return render_template('transaction.html', form=form)
 
 
-
+def get_tuition(form):
+    tuition = SchoolFee.query.filter_by(mssv=form.mssv.data)
+    return tuition.soTien
