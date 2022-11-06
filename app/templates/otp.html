@@ -1,0 +1,82 @@
+{% import "bootstrap/wtf.html" as wtf %}
+<!-- {% extends "base.html" %} -->
+{% block title %}Trang xác nhận OTP{% endblock %}
+
+
+{% block content %}
+
+    <div class="container-home">
+        <div class="block-home show-alert">
+            <div class="progress-spinner">
+                <div class="spinner-border spinner-color" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+            <div class="block-wallet-function">
+                <img class="logo" src="{{ url_for('static', filename='img/favicon.ico') }}" alt="Logo" width="70"/>
+                <div class="function" id="home" href="{{ url_for('main.index') }}">
+                    <i class="icon bi bi-house" onClick="window.location='/'" href="{{ url_for('main.index') }}"></i>
+                    <span href="{{ url_for('main.index') }}" class="mt-1">Home</span>
+                </div>
+                <i class="logout bi bi-box-arrow-right" onClick="window.location='/logout'"></i>
+            </div>
+
+            <div class="block-wallet-content">
+                <div class="user-bar mb-4">
+                    <div class="user-container">
+                        <div class="user-block">
+                            <div class="user-avatar">
+                                <img src="{{ url_for('static', filename='img/avatar.png') }}" alt="Avatar" width="50"/>
+                            </div>
+                            <div class="user-info">
+                                <div class="user-name">
+                                    {{ current_user.userName }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="wallet-content">
+                    <div class="wallet col-8">
+                        <h3 class="mb-3">Thông tin tài khoản</h3>
+                        <div class="d-flex justify-content-between">
+                            <div class="money-block me-3">
+                                <span class="text-secondary" style="font-size: 12pt">Số dư</span>
+                                <div class="d-flex justify-content-between">
+                                    <div class="mt-3 d-flex">
+                                        <span style="font-size: 14pt; margin-right: 5px">VND</span>
+                                        <h4 class="current-money ms-3">
+                                            {{ current_user.balance }}
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="money-block ms-3">
+                                <span class="text-secondary" style="font-size: 12pt">Trạng thái</span>
+                                <div class="d-flex justify-content-between">
+                                    <div class="mt-3 d-flex">
+                                        <h4 class="current-status">Hoạt động</h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="cards col-4 block-transaction">
+                        <h2>Xác nhận OTP</h2>
+                        <form class="" method="POST" action="/otp">
+                            <div class="cards transaction">
+                                {{ form.otp.label(class_="label-1") }}
+                                {{ form.otp(class_="input form-control") }}
+                                {{ form.submit(class_="transaction-form-btn btn") }}
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+
