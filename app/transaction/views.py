@@ -23,7 +23,6 @@ def DongHocPhi():
 
     if form.validate_on_submit():
         # Check MSSV dang duoc thanh toan Or tai khoan dang thanh toan o mot noi khac
-        user = User.query.filter_by(userName="admin").first()
         user_trans_check = TransactionProcessing.query.filter_by(userId=current_user.userId).first()
         if user_trans_check is not None:
             print("User dang thuc hien mot giao dich khac")

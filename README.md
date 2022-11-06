@@ -55,13 +55,11 @@ flask run
 - Bước 1
 - Chạy flask app => truy cập địa chỉ http://127.0.0.1:5000 hoặc có thể thay đổi khác tuỳ máy.
 Trên trang chủ bấm biểu tượng logout dưới mục Home để vào trang Login
-- Nhập username và password (xem dữ liệu trong PHPMySQL bảng user.) hoặc nhập user1/admin => sẽ được chuyển đến trang giao dịch.
-- Điền thông tin muốn đóng học phí vào form (xem dữ liệu trong PHPMySQL bảng SchoolFee ) hoặc điền mssv: 52000101/ho ten: Ngoc Linh/So hoc phi: 11000000(Số tiền học phí sẽ được tự động hiện khu nhập xong mssv )
-- Bấm submit => hệ thống sẽ gửi email về email của userName:(Đăng nhập gmail: pnworkspaceonly@gmail.com/)
-
-
-
-
+- Nhập username và password (xem dữ liệu trong PHPMySQL bảng user.) hoặc nhập user3/admin => sẽ được chuyển đến trang giao dịch.
+- Điền thông tin muốn đóng học phí vào form (xem dữ liệu trong PHPMySQL bảng SchoolFee ) hoặc điền mssv: 52000101/ho ten: Ngoc Linh/So hoc phi: 11000000(Số tiền học phí sẽ được tự động hiện khu nhập xong mssv ). Lưu ý số dư phải lớn hơn số tiền học phí thì mới submit được, nếu số dư bé hơn thì bạn phải logout và chọn user khác.
+- Bấm submit => hệ thống sẽ gửi email về email của userName:(Đăng nhập gmail: pnworkspaceonly@gmail.com/Sword@123% để xem OTP được gửi về). Nếu muốn thay đổi email nhận mã OTP hãy thay đổi ở trong PHPMyADmin bảng users thay đổi thong tin email thành email mong muốn nhận mã OTP
+- Ở trang xác nhận mã OTP => Nhập mã OTP được gửi về email => Bấm submit
+- Nếu đúng mã OTP thì sẽ quay về trang giao dịch. Học phí được đóng sẽ bị xoá. Bấm trang chủ để xem trang học phí được cập nhật. 
 
 ## Author
 - Lê Tuấn Anh - 51900698.
