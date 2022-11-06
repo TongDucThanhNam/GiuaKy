@@ -37,7 +37,7 @@
                     <a class="icon bi bi-house" href="{{ url_for('main.index') }}"></a>
                     <span href="{{ url_for('main.index') }}" class="mt-1">Home</span>
                 </div>
-                <i class="logout bi bi-box-arrow-right" onClick="window.location='/logout'"></i>
+                <a class="logout bi bi-box-arrow-right" href="{{ url_for('main.login') }}"></a>
             </div>
 
             <div class="block-wallet-content">
