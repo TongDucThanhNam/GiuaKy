@@ -17,10 +17,9 @@
                     <i class="icon bi bi-house"></i>
                     <span class="mt-1">Home</span>
                 </div>
-                <i
-                        class="logout bi bi-box-arrow-right"
-                        onClick="window.location='/logout'"
-                ></i>
+
+          
+                <a class="logout bi bi-box-arrow-right" href="{{ url_for('main.login') }}"></a>
             </div>
             <div class="block-wallet-content">
                 <div class="user-bar mb-4">
@@ -59,13 +58,6 @@
                                             <div class="col-4">{{ schoolfee.soTien }}</div>
                                         </div>
                                     {% endfor %}
-                                </div>
-                            </div>
-
-                            <div class="">
-                                <h2>Vào trang đăng nhập:</h2>
-                                <div class="cards transaction">
-                                    <a href="{{ url_for('main.login') }}" style="height: 100%;width: 100%;background-color: #78ffff;color: #9053c7;text-align: center" >Bấm vào vào đây để đến trang đăng nhập</a>
                                 </div>
                             </div>
                         </div>
