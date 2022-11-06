@@ -61,6 +61,8 @@ Trên trang chủ bấm biểu tượng logout dưới mục Home để vào tra
 - Ở trang xác nhận mã OTP => Nhập mã OTP được gửi về email => Bấm submit
 - Nếu đúng mã OTP thì sẽ quay về trang giao dịch. Học phí được đóng sẽ bị xoá. Bấm trang chủ để xem trang học phí được cập nhật. 
 
+!!! Nếu có thông tin gì bị nhập sai ở trang giao dịch hoặc trang OTP khiến bấm nút submit không có gì
+=> Hãy vào PHPMyAdmin vào bảng TranscationProcessing xoá hết dữ liệu
 ## Author
 - Lê Tuấn Anh - 51900698.
 - Tống Đức Thành Nam - 52000896.
