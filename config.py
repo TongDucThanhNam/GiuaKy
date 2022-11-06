@@ -1,5 +1,12 @@
 class Config:
     SECRET_KEY = 'hard to guess string'
+    MAIL_SERVER = 'smtp.googlemail.com'
+    MAIL_PORT = 587
+    MAIL_USE_TLS = True
+    MAIL_USERNAME = 'namthongminhghe@gmail.com'
+    MAIL_PASSWORD = 'vgkuuykzkfftvuwi'
+    FLASKY_MAIL_SUBJECT_PREFIX = '[Flasky]'
+    FLASKY_MAIL_SENDER = 'namthongminhghe@gmail.com'
 
     @staticmethod
     def init_app(app):

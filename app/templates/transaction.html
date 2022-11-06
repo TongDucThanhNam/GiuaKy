@@ -1,6 +1,6 @@
 {% import "bootstrap/wtf.html" as wtf %}
 <!-- {% extends "base.html" %} -->
-{% block title %}Trang đăng nhập{% endblock %}
+{% block title %}Trang giao dịch{% endblock %}
 
 
 {% block content %}
@@ -91,9 +91,6 @@
                                 {{ form.hoTen(class_="input form-control transaction-form") }}
                                 {{ form.soTien.label(class_="label-1") }}
                                 {{ form.soTien(class_="input form-control transaction-form") }}
-                                {{ form.otp.label(class_="label-1") }}
-                                {{ form.otp(class_="input form-control") }}
-                                <button onclick="{{ guiOTP() }}">Send OPT</button>
                                 {{ form.submit(class_="transaction-form-btn btn") }}
                             </div>
                         </form>

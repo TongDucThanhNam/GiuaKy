@@ -1,9 +1,12 @@
-from flask import render_template
+from random import randint
+
+from flask import render_template, url_for, redirect
 from flask_login import login_required, current_user
 
 from app import db
 from app.transaction import transaction
-from app.transaction.forms import TransactionForm
+from app.transaction.forms import TransactionForm, OtpForm
+from ..emails import send_email
 from ..models import SchoolFee, TransactionProcessing
 
 
@@ -32,15 +35,34 @@ def DongHocPhi():
 
             db.session.add(transactionProcessing)
             db.session.commit()
-
+            return redirect(location=url_for('transaction.guiOTP'),)
         #
 
     return render_template('transaction.html', form=form, schoolfees=schoolfees)
 
 
-@transaction.app_template_global('guiOTP')
+def createOTP():
+    return randint(1000, 9999)
+
+
+@transaction.route('/otp', methods=['GET', 'POST'])
 def guiOTP():
+    user = current_user
+    email_subject = "Confirm transaction"
+    print("Email send")
+    otp = createOTP()
+    form = OtpForm()
+
+    send_email(user.email, email_subject, 'mail/otp', user=user, otp=otp)
     print("Hàm gửi OTP")
+    if form.validate_on_submit():
+        print(otp)
+        print(form.otp.data)
+        if form.otp.data == otp:
+            # Xoa sv no hoc phi
+            print("OTP confirm success")
+            redirect(location=url_for('main.index'))
+    return render_template('otp.html', form=form)
 
 
 def get_schoolfee_data():
