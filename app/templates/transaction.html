@@ -34,7 +34,7 @@
             <div class="block-wallet-function">
                 <img class="logo" src="{{ url_for('static', filename='img/favicon.ico') }}" alt="Logo" width="70"/>
                 <div class="function" id="home" href="{{ url_for('main.index') }}">
-                    <i class="icon bi bi-house" onClick="window.location='/'" href="{{ url_for('main.index') }}"></i>
+                    <a class="icon bi bi-house" href="{{ url_for('main.index') }}"></a>
                     <span href="{{ url_for('main.index') }}" class="mt-1">Home</span>
                 </div>
                 <i class="logout bi bi-box-arrow-right" onClick="window.location='/logout'"></i>
