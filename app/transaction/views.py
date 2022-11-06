@@ -49,6 +49,7 @@ def DongHocPhi():
             )
             db.session.add(transactionProcessing)
 
+
             otp = createOTP()
             token = createToken()
             otpManagement = OtpManagement(
