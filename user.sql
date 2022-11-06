@@ -90,6 +90,7 @@ CREATE TABLE `transactionprocessing` (
 
 -- --------------------------------------------------------
 
+
 --
 -- Cấu trúc bảng cho bảng `users`
 --
