@@ -55,7 +55,10 @@ flask run
 - Bước 1
 - Chạy flask app => truy cập địa chỉ http://127.0.0.1:5000 hoặc có thể thay đổi khác tuỳ máy.
 Trên trang chủ bấm biểu tượng logout dưới mục Home để vào trang Login
-- Nhập username và password (xem dữ liệu trong )
+- Nhập username và password (xem dữ liệu trong PHPMySQL bảng user.) hoặc nhập user1/admin => sẽ được chuyển đến trang giao dịch.
+- Điền thông tin muốn đóng học phí vào form (xem dữ liệu trong PHPMySQL bảng SchoolFee ) hoặc điền mssv: 52000101/ho ten: Ngoc Linh/So hoc phi: 11000000(Số tiền học phí sẽ được tự động hiện khu nhập xong mssv )
+- Bấm submit => hệ thống sẽ gửi email về email của userName:(Đăng nhập gmail: pnworkspaceonly@gmail.com/)
+
 
 
 
