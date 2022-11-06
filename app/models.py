@@ -46,12 +46,18 @@ class TransactionHistory(db.Model):
     # remove content later
     content = db.Column(db.String(64))
 
+    def get_id(self):
+        return self.transactionHistoryCode
+
 
 class SchoolFee(db.Model):
     __tablename__ = 'schoolFee'
-    mssv = db.Column(db.String(64), primary_key=True)
+    mssv = db.Column(db.Integer, primary_key=True)
     hoTen = db.Column(db.String(64))
     soTien = db.Column(db.Integer)
+
+    def get_id(self):
+        return self.mssv
 
     def get_soTien(self):
         return self.soTien
@@ -62,7 +68,21 @@ class TransactionProcessing(db.Model):
     __tablename__ = 'transactionProcessing'
     transactionProcessingCode = db.Column(db.Integer, primary_key=True)
     userId = db.Column(db.Integer)
+    mssv = db.Column(db.Integer)
     transactionHistoryCode = db.Column(db.String(64))
     transactionTime = db.Column(db.String(64))
 
+    def get_id(self):
+        return self.transactionProcessingCode
 
+
+class OtpManagement(db.Model):
+    otpId = db.Column(db.Integer, primary_key=True)
+    otp = db.Column(db.Integer)
+    token = db.Column(db.Integer)
+    time_send = db.Column(db.String(64))
+
+    def get_id(self):
+        return self.otpId
+    def getOTP(self):
+        return self.otp

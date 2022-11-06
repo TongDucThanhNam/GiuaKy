@@ -1,11 +1,9 @@
 from flask import render_template, flash, redirect, url_for
+from flask_login import login_user, login_required, logout_user
 
 from app.main import main
 from app.main.forms import LoginForm
-from app.transaction.forms import TransactionForm
-
 from ..models import User, SchoolFee
-from flask_login import login_user, login_required, logout_user
 
 
 # Trang chủ

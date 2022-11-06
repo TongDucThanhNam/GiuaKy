@@ -10,6 +10,7 @@ class TransactionForm(FlaskForm):
     soTien = StringField('So Tien', validators=[DataRequired()])
     submit = SubmitField('Submit')
 
+
 class OtpForm(FlaskForm):
     otp = StringField('OTP', validators=[DataRequired()])
-    submit = SubmitField('Submit')
+    submit = SubmitField('OTP Submit')

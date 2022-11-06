@@ -61,43 +61,18 @@
                                     {% endfor %}
                                 </div>
                             </div>
+
+                            <div class="">
+                                <h2>Vào trang đăng nhập:</h2>
+                                <div class="cards transaction">
+                                    <a href="{{ url_for('main.login') }}" style="height: 100%;width: 100%;background-color: #78ffff;color: #9053c7;text-align: center" >Bấm vào vào đây để đến trang đăng nhập</a>
+                                </div>
+                            </div>
                         </div>
+
+
                     </div>
 
-                </div>
-                <button
-                        class="d-none"
-                        id="history-detail"
-                        data-bs-toggle="modal"
-                        data-bs-target="#history-detail-modal"
-                ></button>
-                <div
-                        class="modal fade"
-                        id="history-detail-modal"
-                        tabindex="-1"
-                        aria-labelledby="history-detail-modal-label"
-                        aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <h5 class="modal-title" id="history-detail-modal-label">
-                                    Chi tiết giao dịch
-                                </h5>
-                                <button
-                                        type="button"
-                                        class="btn-close"
-                                        data-bs-dismiss="modal"
-                                        aria-label="Close"
-                                ></button>
-                            </div>
-                            <div class="modal-body history-detail-data"></div>
-                            <div class="modal-footer d-flex justify-content-center">
-                                <button class="btn btn-success" type="submit" data-bs-dismiss="modal">
-                                    Xác nhận
-                                </button>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
