@@ -15,7 +15,8 @@
 
             {% for schoolfee in schoolfees %}
                 if (mssv == {{ schoolfee.mssv }}) {
-                    transaction_form[2].value = {{ schoolfee.soTien }}
+                    transaction_form[2].value =
+                    {{ schoolfee.soTien }}
                 }
             {% endfor %}
 

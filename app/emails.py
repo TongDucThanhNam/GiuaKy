@@ -18,7 +18,6 @@ def send_email(to, subject, template, **kwargs):
     from flask import render_template
     message.body = render_template(template + '.txt', **kwargs)
     message.html = render_template(template + '.html', **kwargs)
-    print(message)
     thr = Thread(target=send_async_email, args=[app, message])
     thr.start()
     return thr
