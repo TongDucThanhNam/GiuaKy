@@ -37,7 +37,7 @@ def DongHocPhi():
         if schoolFee is None:
             print("Sinh viên không nợ hoc phí hoặc không có trong CSDL")
         else:
-            if current_user.balance < form.soTien.data:
+            if current_user.balance < int(form.soTien.data):
                 print("Khong du so du")
                 return redirect(url_for('transaction.DongHocPhi'))
 
@@ -89,8 +89,12 @@ def guiOTP(token, mssv):
         print("OTP is", otp.getOTP())
         print("Data is", form.otp.data)
         if int(form.otp.data) == int(otp.getOTP()):
-            # Xoa sv no hoc phi
+            # Tru tien vao so du
+            new_balance = current_user.balance - SchoolFee.query.filter_by(mssv=mssv).first().get_soTien()
+            user_after_transaction = User.query.filter_by(userId=current_user.userId).first()
+            user_after_transaction.balance = new_balance
 
+            # Xoa sv no hoc phi
             SchoolFee.query.filter_by(mssv=mssv).delete()
             # Hoan tat Transaction => Xoa khoi bang TransactionProcessing
             TransactionProcessing.query.filter_by(
@@ -98,13 +102,22 @@ def guiOTP(token, mssv):
             # Xoa OTP management
             OtpManagement.query.filter_by(token=token).delete()
 
-            db.commit()
+            db.session.commit()
 
             print("OTP confirm success")
             # Quay lai trang transaction
             return redirect(url_for('transaction.DongHocPhi'))
         else:
             print("Ma OTP khong trung khop")
+            # Giao dich khong thanh cong => Xoa khoi bang TransactionProcessing
+            TransactionProcessing.query.filter_by(
+                mssv=mssv).delete()
+            # Xoa OTP management
+            OtpManagement.query.filter_by(token=token).delete()
+
+            db.session.commit()
+
+            return redirect(url_for('transaction.DongHocPhi'))
 
     return render_template('otp.html', form=form)
 

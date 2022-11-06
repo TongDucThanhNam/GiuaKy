@@ -84,5 +84,6 @@ class OtpManagement(db.Model):
 
     def get_id(self):
         return self.otpId
+
     def getOTP(self):
         return self.otp
